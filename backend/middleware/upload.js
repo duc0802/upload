@@ -8,12 +8,11 @@ const nanoid = customAlphabet(alphanumeric, 8);
 
 const idImage = nanoid();
 
-console.log(idImage);
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     const dir = path.join(__dirname, "../public", idImage);
     fs.mkdirSync(dir);
-    cb(null, dir);
+    cb(null, `public/${idImage}`);
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);
