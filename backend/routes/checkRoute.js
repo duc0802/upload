@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const SingleImage = require("../models/SingleImage");
-const fs = require("fs");
+const fs = require("fs-extra");
 const path = require("path");
 
 router.get("/all", (req, res) => {
