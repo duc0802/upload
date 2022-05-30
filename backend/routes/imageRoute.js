@@ -4,7 +4,11 @@ const SingleImage = require("../models/SingleImage");
 const fs = require("fs-extra");
 const path = require("path");
 
-router.get("/:id", async (req, res, next) => {
+router.get("/v1", async (req, res, next) => {
+  await res.send("Hello World")
+});
+
+router.get("/v1/:id", async (req, res, next) => {
   const id = await req.params.id;
   try {
     const data = await SingleImage.find({ _id: id });

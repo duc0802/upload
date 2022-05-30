@@ -17,11 +17,16 @@ app.use(cors());
 app.use(helmet({ crossOriginResourcePolicy: { policy: "same-site" } }));
 
 // routes
-app.use("/uploadSingle", uploadSingle);
-app.use("/image", checkRoute);
+app.use("v1/uploadSingle/", uploadSingle);
+app.use("v1/image/", checkRoute);
 app.use("/", imageRoute);
 
-app.use((err, req, res, next) => {});
+app.use((req, res, next) => {
+  const { access_key } = req.query;
+  if (access_key !== "abcxyz123") {
+    return res.status(400).send({ msg: "Access_key wrong" });
+  }
+});
 
 const PORT = process.env.PORT;
 app.listen(PORT, () =>
