@@ -1,0 +1,15 @@
+{
+  "short_name": "Upload Pictures",
+  "name": "Create Upload Pictures Sample",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "150x150",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "rgb(139,92,246)",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply font-sans antialiased font-normal text-base;
+  }
+
+  /* main */
+  .main {
+    @apply transition-[margin-left,box-shadow] duration-500 z-30 px-5;
+  }
+
+  /* Header */
+  .header {
+    @apply px-4 py-2 flex sticky top-0 w-full border-solid border-slate-200 border-b-[thin] shadow-sm backdrop-blur-[20px] z-40;
+  }
+
+  .headerCenter {
+    @apply h-12 flex items-center flex-auto;
+  }
+
+  .h-btn {
+    @apply text-violet-500 p-2 rounded-[10px] border-[thin] border-slate-300  flex items-center justify-center h-9 w-9 cursor-none transition ease-in-out duration-300;
+  }
+
+  .h-btn:focus {
+    @apply bg-violet-200/80;
+  }
+
+  .h-logo {
+    @apply text-violet-500 ml-3.5;
+  }
+
+  .h-r-btn {
+    @apply flex items-center justify-center;
+  }
+
+  /* Sidebar */
+
+  .themeNav {
+    @apply fixed inset-0 bg-black/50 transition-opacity ease-in-out duration-[225ms] z-[-1];
+  }
+
+  .nav {
+    @apply fixed top-0 left-0 w-[300px] h-full bg-white transition-all ease-out duration-[225ms] rounded-r-xl shadow-2xl transform-none flex flex-col flex-auto z-50;
+  }
+}
